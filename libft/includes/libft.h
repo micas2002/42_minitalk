@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mibernar <mibernar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mibernar <mibernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 12:03:03 by mibernar          #+#    #+#             */
-/*   Updated: 2022/08/30 16:29:40 by mibernar         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:39:13 by mibernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 # include <stdarg.h>
 
 # define BUFFER_SIZE 1
@@ -60,10 +61,11 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-//GET_NEXT_LINE
 char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strdup_gnl(char *s1);
+int		ft_strchr_gnl(char *temp, int c);
 
-//PRINTF
 int		ft_printf(const char *format, ...);
 int		ft_printf_c(int args);
 int		ft_printf_i(int args);
@@ -73,6 +75,10 @@ int		ft_printf_s(char *args);
 int		ft_printf_u(int args);
 int		ft_printf_x_lower(int args);
 int		ft_printf_x_upper(int args);
+char	*ft_itoa(int n);
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s1);
+void	ft_putchar_fd(char c, int fd);
 char	*ft_unsigned_itoa(unsigned int n);
 
 // BONUS

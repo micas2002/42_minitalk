@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_x_lower.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mibernar <mibernar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mibernar <mibernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 13:04:31 by mibernar          #+#    #+#             */
-/*   Updated: 2022/08/30 16:26:52 by mibernar         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:33:36 by mibernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mibernar <mibernar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mibernar <mibernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:12:55 by mibernar          #+#    #+#             */
-/*   Updated: 2022/08/30 17:53:45 by mibernar         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:06:01 by mibernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <signal.h>
-# include "libft/libft.h"
+# include "libft/includes/libft.h"
 
 // PROTOTYPES
 

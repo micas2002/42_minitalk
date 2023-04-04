@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p.c                                      :+:      :+:    :+:   */
+/*   ft_printf_x_upper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mibernar <mibernar@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mibernar <mibernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 15:39:08 by mibernar          #+#    #+#             */
-/*   Updated: 2022/08/30 16:30:50 by mibernar         ###   ########.fr       */
+/*   Created: 2022/01/12 13:04:33 by mibernar          #+#    #+#             */
+/*   Updated: 2023/04/04 17:33:47 by mibernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ static char	*rev_str(char *hex_num)
 	return (temp);
 }
 
-static char	*convert(unsigned long quotient, char *hex_num)
+static char	*convert(long quotient, char *hex_num)
 {
-	int				j;
-	unsigned long	remainder;
+	int		j;
+	long	remainder;
 
 	j = 0;
 	while (quotient != 0)
@@ -44,48 +44,35 @@ static char	*convert(unsigned long quotient, char *hex_num)
 		if (remainder < 10)
 			hex_num[j++] = 48 + remainder;
 		else
-			hex_num[j++] = 87 + remainder;
+			hex_num[j++] = 55 + remainder;
 		quotient = quotient / 16;
 	}
 	hex_num[j] = '\0';
 	return (hex_num);
 }
 
-char	*hexa_convert(long args)
+int	ft_printf_x_upper(int args)
 {
-	unsigned long	quotient;
-	char			*hex_num;
-	char			*final;
+	long	quotient;
+	int		i;
+	char	*hex_num;
+	char	*final;
 
 	if (args < 0)
 		quotient = 4294967296 + args;
 	else if (args == 0)
 	{
-		final = malloc(sizeof(char) * 1);
-		final[0] = '0';
-		final[1] = '\0';
-		return (final);
+		write (1, "0", 1);
+		return (1);
 	}
 	else
 		quotient = args;
 	hex_num = malloc(sizeof(char) * 500);
 	final = convert(quotient, hex_num);
 	final = rev_str(final);
+	i = ft_strlen(final);
+	write (1, final, i);
 	free (hex_num);
-	return (final);
-}
-
-int	ft_printf_p(void *args)
-{
-	unsigned long	address;
-	size_t			size;
-	char			*str;
-
-	address = (unsigned long) args;
-	str = hexa_convert(address);
-	size = ft_strlen(str);
-	write(1, "0x", 2);
-	write(1, str, size);
-	free(str);
-	return (size + 2);
+	free (final);
+	return (i);
 }
